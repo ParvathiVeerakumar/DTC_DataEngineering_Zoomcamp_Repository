@@ -1,0 +1,13 @@
+services:
+  spark:
+    image: apache/spark:4.0.1-python3          # This tells Docker Compose to use the Dockerfile in the current directory
+    container_name: spark
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+      - "4040:4040"
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
+    environment:
+      - SPARK_MODE=master
+    volumes:
+      - ./:/opt/spark/work-dir

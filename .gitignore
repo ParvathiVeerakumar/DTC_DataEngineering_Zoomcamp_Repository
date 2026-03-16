@@ -264,3 +264,6 @@ logs/runs
 logs/*.log
 *.py[cod]
 logs/
+*.csv.gz
+*.csv
+*.parquet
